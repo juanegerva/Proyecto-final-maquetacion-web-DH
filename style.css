@@ -1,0 +1,266 @@
+/* NORMALIZACION  */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box; /* Mantiene el alto y ancho sin que lo afecte el padding y el margin*/
+   font-family: "Poppins", sans-serif;
+   list-style: none; /*Sacamos los puntos de al lado de la lista */
+   text-decoration: none; /*Esto es para que los enlaces no aparezcan subrayados*/
+   color: white
+}
+
+body {
+   background-color: rgb(19, 3, 3); /*MOMENTANEO*/
+}
+
+header {
+   position: fixed; /* Esto hace que quede fijo en la parte superior */
+   right: 0;
+   top: 0;
+   z-index: 100; /*Esto hace que se muestre por encima */
+   width: 100%;
+   display: flex; /* Esto hara que los elementos se pongan en linea*/
+   align-items: center; /* centrado verticalmente*/
+   justify-content:space-between;/* los elementos se separan en los extremos*/
+   padding: 15px 3%;
+   background-color: transparent;
+}
+
+.logo {
+   font-size: 30px;
+   font-weight: 700;
+
+}
+
+.navlist {
+   display:flex; /* Sirve para que los elementos se ordenen en linea*/
+
+}
+
+.navlist a{
+   margin-left: 60px;
+   font-size: 15px;
+   font-weight: 500;
+   border-bottom: 2px solid transparent;
+   transition: all .5s ease; /* esto es para animar todas las caracteristivacas navlist*/
+}
+
+.navlist a:hover {
+   border-bottom: 2px solid white;
+}
+
+#menu-icon {
+   display: none;
+}
+
+#menu-icon {
+   font-size: 40px;
+   z-index: 101; /* para que este sobre el header*/
+   cursor:pointer; /* para que cuando pasemos se vea una manito*/
+}
+
+#menu-toggle {
+   display: none;
+}
+
+#menu-icon-action {
+   display: none;
+}
+
+.hero {
+   height: 100%;
+   width: 100%;
+   min-height: 100vh;
+   background: linear-gradient(245.59deg,#31494e 0%, #385e70 25%, #131313 75%); /*Fonde de color degrade*/
+   position: relative; /*posicion que sea relativa*/
+   display: grid; /*utilizamos el grid*/
+   grid-template-columns: 1fr 1fr; /*indicamos dos columbas*/
+   align-items: center; /*centramos de manera vertical*/
+   gap: 2rem; /*espacio entre columnas*/
+}
+
+section {
+   padding: 0 5%;
+}
+
+.hero-text h5{
+   font-size: 15px;
+   font-weight: 400;
+   margin-bottom: 20px;
+}
+
+.hero-text h4{
+   font-size: 20px;
+   font-weight: 600;
+}
+
+.hero-text h1{
+   font-family: roboto;
+   font-size: 50px;
+   font-weight: 700;
+   line-height: 1;
+   margin: 0 0 30px;
+}
+
+.hero-text p {
+   font-size: 80%;
+   margin-bottom: 40px;
+   line-height: 1.9;
+}
+
+.hero-img img {
+   width: 70%;
+   margin: 10% 0 0 10%;
+   height: auto;
+   transition: all 3s linear;/*esto hace que la transicion sea linear*/
+}
+
+.hero-img img:hover {
+   width: 78%;
+   opacity: 0.5;
+}
+
+.hero-text a {
+   display: inline-block;
+   background-color: rgb(75, 72, 72);
+   border: 1px solid transparent;
+   padding: 15px 30px;
+   line-height: 1.4;
+   font-size: 18px;
+   font-weight: 500;
+   border-radius: 30px;
+   text-transform: uppercase;
+   transition: all .5s ease;
+}
+
+.hero-text a:hover {
+   background-color: transparent;
+   border: solid white 1px;
+   transform: translateX(6px);
+}
+
+.hero-text a.portfolio {
+   background-color: transparent;
+   border: 1px solid white;
+   margin-left: 15px;
+}
+
+.icons {
+   position: absolute;
+   top: 50vh;
+   padding: 0 3% 0 1.5%;
+   transform: translateY(-50%);
+}
+
+.icons i {
+   display: block;
+   margin: 25px 0;
+   font-size: 25px;
+   transition: all .5s ease;
+}
+
+.icons i:hover{
+   color: #4d4d4d;
+   transform: translateX(-8px);
+}
+
+.scroll-down {
+   position: absolute;
+   bottom: 6%;
+   right: 3%;
+}
+
+.scroll-down i {
+   display: block;
+   padding: 12px;
+   font-size: 35px;
+   background-color: #21383d;
+   border-radius: 30px;
+   transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+   transform: translateY(5px);
+}
+
+/*Aca se van a hacer media queries para que la pagina sea responsive */
+@media (max-width:992px) {
+   section {
+      padding: 0 3%;
+      transition: .2s;
+   }
+
+   .hero-text{
+      padding-top: 0;
+   }
+
+   .hero-img{
+      text-align: center;
+   }
+
+   .hero-img img {
+      width: 60%;
+      margin: 10% 0 0 10%
+   }
+
+   .hero-text p{
+      font-size: 70%;
+   }
+
+   .icons {
+      display: none;
+   }
+
+   .scroll-down{
+      display: none;
+   }
+}
+
+
+@media (max-width:768px) {
+   .menu-icon-action{
+      display: block;
+   }
+
+   #menu-icon{
+      display: block;
+   }
+
+   .hero-text {
+      text-align: center;
+      padding-top: 100px;
+   }
+
+   .hero-img img {
+      margin: 20px 0;
+   }
+
+   .hero {
+      height: 100%;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+   }
+
+   .navlist {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 200px;
+      height: 180px;
+      background-color: #04343fc3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 30px;
+      transition: all .5s ease-out;
+   }
+
+   .navlist a {
+      display: block;
+      margin: 4px 0;
+   }
+
+   #menu-toggle:checked + label.menu-icon-action + ul {
+      right: 0;
+   }
+}
